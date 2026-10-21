@@ -3,84 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamirci Cebimde - Gizlilik Politikası</title>
+    <title>Fixy Gizlilik Politikası</title>
+    <meta name="description" content="Fixy uygulamasının hangi verileri işlediği, kimlerle paylaştığı, ne kadar sakladığı ve verilerinizi nasıl silebileceğiniz.">
+    <link rel="alternate" hreflang="tr" href="privacy-policy.html">
+    <link rel="alternate" hreflang="en" href="privacy-policy-en.html">
+    <script>
+        // The app and older store listings link this page for every language.
+        // Send readers whose device is not set to Turkish to the English page;
+        // "?lang=tr" (used by the English page's switch link) keeps Turkish.
+        (function () {
+            try {
+                if (/[?&]lang=tr\b/.test(window.location.search)) return;
+                var langs = navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || ""];
+                var wantsTurkish = langs.some(function (l) {
+                    return String(l).toLowerCase().indexOf("tr") === 0;
+                });
+                if (!wantsTurkish) window.location.replace("privacy-policy-en.html" + window.location.hash);
+            } catch (e) { /* stay on the Turkish page */ }
+        })();
+    </script>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
+        :root {
+            --bg: #ffffff;
+            --text: #1f2328;
+            --muted: #59636e;
+            --accent: #1a5fd0;
+            --border: #d8dee4;
+            --soft: #f3f6fb;
+            --warn-bg: #fff4e5;
+            --warn-border: #f0b45a;
         }
-        h1 { color: #1a73e8; }
-        h2 { color: #444; margin-top: 30px; }
-        .date { color: #666; font-style: italic; }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1216;
+                --text: #e6e9ed;
+                --muted: #9aa4af;
+                --accent: #7fb0ff;
+                --border: #2c333b;
+                --soft: #171c22;
+                --warn-bg: #2b2112;
+                --warn-border: #a8762e;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        main { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+        header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+        h1 { font-size: 1.8rem; margin: 0; }
+        h2 { font-size: 1.25rem; margin: 36px 0 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+        h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+        a { color: var(--accent); }
+        .lang-switch { font-size: 0.95rem; }
+        .meta { color: var(--muted); margin: 4px 0 20px; }
+        .summary { background: var(--soft); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; }
+        .summary ul { margin: 8px 0; padding-left: 20px; }
+        .note { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 10px; padding: 10px 14px; }
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 8px 10px; border: 1px solid var(--border); }
+        th { background: var(--soft); }
+        .where { color: var(--muted); font-size: 0.85rem; }
+        footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <h1>Tamirci Cebimde - Gizlilik Politikası</h1>
-    <p class="date">Son güncelleme: 10 Şubat 2026</p>
+<main>
+    <header>
+        <h1>Fixy Gizlilik Politikası</h1>
+        <a class="lang-switch" href="privacy-policy-en.html" hreflang="en" lang="en">English version</a>
+    </header>
+    <p class="meta">Son güncelleme: Ekim 2026 · Fixy iOS uygulaması (1.2.0 ve sonrası) ve onun sunucu hizmeti için geçerlidir.</p>
 
-    <h2>1. Giriş</h2>
-    <p>Tamirci Cebimde uygulaması ("Uygulama") olarak kullanıcılarımızın gizliliğini korumayı taahhüt ediyoruz. Bu gizlilik politikası, uygulamamızı kullanırken hangi bilgilerin toplandığını ve nasıl kullanıldığını açıklar.</p>
+    <section class="summary" aria-label="Kısaca">
+        <strong>Kısaca</strong>
+        <ul>
+            <li>Fixy'de hesap açmazsınız. Reklam, reklam amaçlı takip (tracking) ve veri satışı yoktur.</li>
+            <li>Sorun açıklamanız ve fotoğrafınız, tamir rehberi üretmek için sunucumuz üzerinden yapay zekâ sağlayıcılarına (öncelikle Anthropic'in Claude modellerine) gönderilir. Fotoğraflar sunucularımızda saklanmaz.</li>
+            <li>Geçmişiniz (en fazla 12 ay) ve kaydettiğiniz rehberler, cihazınızda üretilen rastgele bir kimlikle eşleştirilerek siz silene kadar sunucumuzda saklanır. Uygulamanın 12 ay boyunca kullanılmadığı bir cihazın kayıtlı rehberleri silinir.</li>
+            <li>Sunucudaki verilerinizi istediğiniz an uygulamada <strong>Ayarlar &gt; Verilerimi sil</strong> ile silebilirsiniz.</li>
+            <li>Abonelik ödemelerini Apple alır, abonelik durumu RevenueCat ile yönetilir. Kart bilgilerinizi hiçbir zaman görmeyiz.</li>
+        </ul>
+    </section>
 
-    <h2>2. Toplanan Bilgiler</h2>
-    <h3>2.1 Otomatik Olarak Toplanan Bilgiler</h3>
+    <h2 id="controller">1. Veri sorumlusu ve iletişim</h2>
+    <p>
+        Fixy, bireysel geliştirici <strong>Seyit Kaan Güneş</strong> (Türkiye) tarafından geliştirilir ve sunulur.
+        6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve AB Genel Veri Koruma Tüzüğü (GDPR) bakımından
+        veri sorumlusu odur. Gizlilikle ilgili her türlü soru ve talep için:
+        <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a>
+    </p>
+
+    <h2 id="data">2. Hangi verileri işliyoruz?</h2>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Veri</th><th>Ne için kullanılır</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Rastgele cihaz kimliği</strong></td>
+                <td>Uygulama ilk açılışta rastgele bir kimlik üretir. Adınız, e-postanız, telefon numaranız veya Apple reklam kimliğiniz (IDFA) kullanılmaz. Bu kimlik kullanım limitlerinizi, geçmişinizi, kayıtlı rehberlerinizi ve aboneliğinizi eşleştirmek için kullanılır. iOS Anahtar Zinciri'nde (Keychain) saklandığı için uygulamayı silip yeniden yükleseniz de aynı kalabilir.</td>
+            </tr>
+            <tr>
+                <td><strong>Sorun açıklaması ve seçimleriniz</strong></td>
+                <td>Yazdığınız açıklama, seçtiğiniz kategori, uygulama dili ve Çırak/Usta modu; teşhis ve tamir rehberi üretmek için.</td>
+            </tr>
+            <tr>
+                <td><strong>Fotoğraflar</strong></td>
+                <td>Sorun fotoğrafı ve (Premium) adım fotoğrafı yalnızca analiz için yapay zekâ sağlayıcısına iletilir. Sunucularımızda saklanmaz; geçmişte yalnızca “fotoğraf eklendi” bilgisi tutulur.</td>
+            </tr>
+            <tr>
+                <td><strong>Yapay zekâ yanıtları</strong></td>
+                <td>Teşhis, güvenlik uyarıları, malzemeler ve adımlar; size gösterilmek ve Geçmiş'te listelenmek için.</td>
+            </tr>
+            <tr>
+                <td><strong>Kayıtlı rehberler</strong></td>
+                <td>Kaydet'e dokunduğunuz rehberler; daha sonra yeniden açabilmeniz için.</td>
+            </tr>
+            <tr>
+                <td><strong>Geri bildirim</strong></td>
+                <td>“Faydalı / faydasız / tamamlandı” işaretleri ve isteğe bağlı yorumunuz; rehber kalitesini iyileştirmek için.</td>
+            </tr>
+            <tr>
+                <td><strong>Kullanım ve limit sayaçları</strong></td>
+                <td>Dakikalık ve günlük istek sayıları, günlük rehber kaydı sayıları, ücretsiz Usta önizlemesinin kullanılıp kullanılmadığı ve zaman damgaları; ücretsiz kullanım sınırlarını uygulamak ve kötüye kullanımı önlemek için.</td>
+            </tr>
+            <tr>
+                <td><strong>Abonelik bilgileri</strong></td>
+                <td>Ürün (haftalık/aylık/yıllık), başlangıç ve bitiş tarihleri, mağaza ve RevenueCat'ten gelen abonelik olayları; Premium özellikleri açmak için.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik veriler</strong></td>
+                <td>IP adresi, uygulama sürümü ve hata kayıtları; güvenlik, IP başına hız sınırı ve hata ayıklama için. IP adresi veritabanımıza yazılmaz. Ücretsiz kullanımı adil paylaştırmak için veritabanında, IP adresinden (IPv6'da ağ kısmından) anahtarlı ve tek yönlü olarak türetilen bir kodla ağ başına günlük bir kullanım sayacı tutulur; kod her gün değişir ve adres bu koddan okunamaz.</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>
+        <strong>Yalnızca cihazınızda kalanlar:</strong> dil seçimi, veri işleme onayı, seçili mod ve tanıtım ekranının görülüp görülmediği gibi ayarlar.
+    </p>
+    <p>
+        <strong>Toplamadıklarımız:</strong> ad, e-posta, telefon numarası, rehber, hassas konum, reklam kimliği (IDFA), sağlık verisi ve kart bilgileri.
+    </p>
+    <p class="note">
+        Lütfen açıklamalarınıza ve fotoğraflarınıza gerekmedikçe kimlik, adres, yüz, belge gibi kişisel bilgiler koymayın.
+        Fixy'nin çalışması için bunlara ihtiyaç yoktur.
+    </p>
+
+    <h2 id="purposes">3. Amaçlar ve hukuki sebepler</h2>
     <ul>
-        <li><strong>Cihaz Kimliği:</strong> Anonim bir cihaz kimliği oluşturulur. Bu kimlik kişisel bilgilerinizle ilişkilendirilmez.</li>
-        <li><strong>Kullanım Verileri:</strong> Uygulama içi etkileşimler (analiz sayısı, kullanılan kategoriler) anonim olarak kaydedilir.</li>
+        <li><strong>İstediğiniz analizi ve rehberi üretmek, Geçmiş ve Kayıtlı rehberler özelliklerini sunmak:</strong> sözleşmenin kurulması ve ifası (KVKK m. 5/2-c; GDPR m. 6/1-b).</li>
+        <li><strong>Açıklama ve fotoğraflarınızın yapay zekâ sağlayıcılarına aktarılması ve yurt dışında işlenmesi:</strong> ilk analizden önce uygulamada istenen açık rızanız (KVKK m. 5/1 ve m. 9; GDPR m. 6/1-a). Rızanızı dilediğiniz an geri alabilirsiniz.</li>
+        <li><strong>Aboneliği doğrulamak ve Premium'u açmak:</strong> sözleşmenin ifası.</li>
+        <li><strong>Güvenlik, limitler, kötüye kullanım ve dolandırıcılığın önlenmesi:</strong> meşru menfaat (KVKK m. 5/2-f; GDPR m. 6/1-f).</li>
+        <li><strong>Yasal yükümlülükler ve resmî makam talepleri:</strong> KVKK m. 5/2-ç; GDPR m. 6/1-c.</li>
     </ul>
+    <p>Verilerinizi reklam, profil çıkarma veya satış için kullanmayız. Uygulamada reklam veya reklam SDK'sı yoktur.</p>
 
-    <h3>2.2 Kullanıcının Sağladığı Bilgiler</h3>
+    <h2 id="recipients">4. Yapay zekâ işleme ve verilerin aktarıldığı taraflar</h2>
+    <p>Verilerinizi yalnızca hizmeti sunmak için, bizim adımıza çalışan aşağıdaki hizmet sağlayıcılarla paylaşırız:</p>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Sağlayıcı</th><th>Rolü</th><th>Aldığı veriler</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Anthropic, PBC</strong><br><span class="where">ABD</span></td>
+                <td>Birincil yapay zekâ sağlayıcısı (Claude modelleri). Teşhisleri, rehberleri ve adım fotoğrafı kontrollerini üretir.</td>
+                <td>Açıklama, fotoğraf, kategori, dil ve mod. Cihaz kimliğiniz gönderilmez.</td>
+            </tr>
+            <tr>
+                <td><strong>Cloudflare, Inc.</strong><br><span class="where">Küresel ağ, ABD merkezli</span></td>
+                <td>Sunucu altyapısı (Workers), veritabanı (D1), kısa süreli önbellek (KV), IP tabanlı hız sınırı ve yedek yapay zekâ sağlayıcısı (Workers AI).</td>
+                <td>Uygulamanın sunucuya gönderdiği tüm istekler ve IP adresi; yedek olarak çalıştığında analiz verileri.</td>
+            </tr>
+            <tr>
+                <td><strong>Yedek yapay zekâ sağlayıcıları</strong><br><span class="where">ABD; Singapur (Alibaba Cloud)</span></td>
+                <td>Yalnızca birincil sağlayıcıya ulaşılamadığında ve yapılandırmamızda etkinse kullanılır: Groq, Inc.; Alibaba Cloud Model Studio (Qwen modelleri, uluslararası bölge); Google (Gemini API, yalnızca fotoğraf analizi).</td>
+                <td>Aynı analiz verileri. Cihaz kimliğiniz gönderilmez.</td>
+            </tr>
+            <tr>
+                <td><strong>RevenueCat, Inc.</strong><br><span class="where">ABD</span></td>
+                <td>Abonelik yönetimi ve satın alma doğrulama.</td>
+                <td>Rastgele cihaz kimliği (uygulama kullanıcı kimliği olarak), satın alma ve abonelik işlemleri, cihaz modeli, iOS ve uygulama sürümü gibi teknik bilgiler.</td>
+            </tr>
+            <tr>
+                <td><strong>Apple Inc.</strong><br><span class="where">ABD / bölgenize göre</span></td>
+                <td>App Store ödemeleri, abonelik yenileme, iptal ve iadeler.</td>
+                <td>Ödeme bilgilerinizi yalnızca Apple işler; Apple'ın kendi gizlilik politikası geçerlidir.</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>
+        Yapay zekâ sağlayıcıları verileri kendi ticari API koşulları çerçevesinde ve yalnızca isteğinizi yanıtlamak için işler.
+        Anthropic, API üzerinden gelen verileri varsayılan olarak model eğitiminde kullanmaz. Sağlayıcılar kötüye kullanımı
+        izlemek için verileri sınırlı bir süre (genellikle en fazla 30 gün) saklayabilir.
+        Bunların dışında verilerinizi yalnızca yasal olarak zorunlu olduğunda yetkili makamlarla paylaşırız.
+    </p>
+
+    <h2 id="transfers">5. Yurt dışına aktarım</h2>
+    <p>
+        Sunucularımız ve sağlayıcılarımız Türkiye ve Avrupa Ekonomik Alanı dışında, başta ABD ve Singapur olmak üzere farklı
+        ülkelerde bulunur. Bu aktarım; ilk analizden önce verdiğiniz açık rızaya (KVKK m. 9) ve sağlayıcıların sunduğu
+        standart sözleşme hükümleri gibi uygun güvencelere (GDPR m. 46) dayanır. Açık rızanızı geri alırsanız yeni analiz
+        yapılamaz.
+    </p>
+
+    <h2 id="retention">6. Saklama süreleri</h2>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Veri</th><th>Ne kadar saklanır</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Fotoğraflar</td><td>Sunucularımızda saklanmaz; yanıt üretildikten sonra atılır. Yapay zekâ sağlayıcısı kendi koşullarına göre sınırlı süre tutabilir (bkz. bölüm 4).</td></tr>
+            <tr><td>Geçmiş (açıklamalar ve yapay zekâ yanıtları)</td><td>Siz silene kadar, en fazla 12 ay: daha eski kayıtlar her gün otomatik olarak silinir. <strong>Ayarlar &gt; Verilerimi sil</strong> ile hepsi hemen silinir.</td></tr>
+            <tr><td>Kayıtlı rehberler ve 1.2'den önceki uygulama sürümlerinde ayarlanan profil tercihleri</td><td>Siz silene kadar, uygulamayı kullandığınız sürece: uygulama bir cihazda 12 ay boyunca açılmazsa o cihazın kayıtlı rehberleri, profil tercihleri ve cihaz kaydı otomatik olarak silinir (abonelik veya satın alma kaydı varsa silinmez). Uygulamayı her açışınız kullanım sayılır. <strong>Ayarlar &gt; Verilerimi sil</strong> ile hepsi hemen silinir. Tek bir kayıtlı rehberi sildiğinizde o rehber hemen silinir.</td></tr>
+            <tr><td>Rehberlere verilen geri bildirimler</td><td>Siz silene kadar, en fazla 12 ay: daha eski geri bildirimler her gün otomatik olarak silinir. <strong>Ayarlar &gt; Verilerimi sil</strong> ile hepsi hemen silinir.</td></tr>
+            <tr><td>Kullanım ve limit sayaçları, ücretsiz önizleme kaydı</td><td>Limitleri uygulamak için gerektiği sürece. <strong>Verilerimi sil</strong> ile hemen silinir; yalnızca günlük limit sayaçları (istek ve bazı rehber kayıtlarının sayıları: bu cihazın bugünkü sayacı ve bir aboneliğin, bugün onu geri yükleyen yeni cihaz sayısı da dahil sayaçları; ikincisi, aboneliği geri yükleyen tüm cihazlar tek bir adil kullanım sınırını paylaşsın diye mağaza aboneliğinin tek yönlü bir koduyla tutulur) veri silmek günlük limiti sıfırlamasın diye en geç 7 gün içinde otomatik olarak silinir. Başka hiçbir veri tutmayan (geçmişi, kayıtlı rehberi, geri bildirimi veya aboneliği olmayan) bir cihaz kaydı, varsa profil tercihleriyle birlikte, cihaz son kullanıldıktan 30 gün sonra otomatik olarak silinir.</td></tr>
+            <tr><td>Abonelik aktarım bağlantısı</td><td>Yalnızca aboneliğiniz aynı Apple Kimliği'ne bağlı cihazlar arasında taşındıysa: diğer cihazın Premium'u koruması için iki rastgele cihaz kimliği arasındaki bağlantı (başka içerik yok). Aksi halde diğer cihaz ödediğiniz aboneliği kaybedeceği için <strong>Verilerimi sil</strong> bunu silmez. İki cihazda da 30 gün boyunca aktif abonelik olmadığında otomatik olarak silinir.</td></tr>
+            <tr><td>Sunucudaki abonelik kopyası</td><td>Günlük limitlerin sayıldığı mağaza aboneliği koduyla birlikte <strong>Verilerimi sil</strong> ile silinir. Aktif aboneliğiniz varsa uygulama bir sonraki eşitlemede Apple ve RevenueCat'ten yeniden oluşturur. Abonelik, ücretsiz deneme ve varsa bonus günler sona erdikten 30 gün sonra da otomatik olarak silinir. Apple ve RevenueCat'teki satın alma kayıtları onların politikalarına ve vergi/muhasebe yükümlülüklerine göre saklanır.</td></tr>
+            <tr><td>Abonelik olay kaydı (RevenueCat bildirimleri)</td><td>En fazla 90 gün, sonra otomatik olarak silinir. Her kayıt, bildirimi RevenueCat'in gönderdiği haliyle tutar (olay türü, ürün, işlem kimlikleri, fiyat, ülke, mağaza ve ilgili rastgele cihaz kimlikleri). <strong>Verilerimi sil</strong> bu cihazın kendi olaylarını hemen siler. Aynı Apple Kimliği'ne bağlı başka bir cihazın, bu cihazın kimliğini içeren bir olayı (örneğin abonelik iki cihaz arasında taşındığında) 90 günü dolana kadar saklanır.</td></tr>
+            <tr><td>Yanıt önbelleği</td><td>Aynı isteğe hızlı yanıt verebilmek için yapay zekâ yanıtları, açıklamanın özet değeriyle (hash) en fazla 24 saat önbellekte tutulur. Cihaz kimliğinize bağlı değildir ve süre dolunca kendiliğinden silinir.</td></tr>
+            <tr><td>Ağ başına günlük kullanım sayacı</td><td>Ücretsiz kullanımın tahmini yapay zekâ maliyeti ile bazı rehber kayıtlarının, geçmiş kayıtlarının, geri bildirimlerin ve yeni cihaz kayıtlarının sayısı; ağın günlük, tek yönlü bir koduyla (IP adresi değil, cihaz kimliğinize bağlı değil); ayrıca tüm ağlar için tek bir günlük toplam ücretsiz yapay zekâ maliyeti. En geç 2 gün içinde otomatik olarak silinir.</td></tr>
+            <tr><td>Teknik kayıtlar</td><td>Kalıcı olarak saklanmaz; en fazla 30 gün.</td></tr>
+            <tr><td>Cihazınızdaki ayarlar</td><td>Uygulamayı silene kadar. Rastgele cihaz kimliği iOS Anahtar Zinciri'nde kalabilir; bu sayede satın alımlarınız geri yüklenebilir.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2 id="rights">7. Haklarınız ve kontrolleriniz</h2>
+    <h3 id="delete">Uygulama içinden</h3>
     <ul>
-        <li><strong>Fotoğraflar:</strong> Tamir analizi için gönderdiğiniz fotoğraflar sunucularımızda işlenir. Fotoğraflar analiz tamamlandıktan sonra kalıcı olarak saklanmaz.</li>
-        <li><strong>Metin Açıklamaları:</strong> Sorun tarif etmek için yazdığınız metinler analiz amacıyla sunucuya gönderilir.</li>
-        <li><strong>Beceri Seviyesi ve Ev Tipi:</strong> Kişiselleştirilmiş tamir rehberleri sunmak için tercihleriniz yerel olarak cihazınızda saklanır.</li>
+        <li><strong>Verilerimi sil:</strong> Ana ekrandaki dişli simgesiyle açılan <strong>Ayarlar &gt; Verilerimi sil</strong> seçeneği; sunucudaki geçmişinizi, kayıtlı rehberlerinizi, tercihlerinizi, geri bildirimlerinizi, kullanım sayaçlarınızı (günlük limit sayaçları 7 gün içinde kendiliğinden silinir), kendi abonelik olaylarınızı ve abonelik kopyanızı siler. Varsa, iki cihaz kimliğiniz arasındaki abonelik aktarım bağlantısı abonelik sona erdikten 30 gün sonrasına kadar saklanır (bkz. bölüm 6). İşlem geri alınamaz. Aboneliğinizi iptal etmez; iptal için Apple Kimliği ayarlarınızı kullanın (<a href="support.html?lang=tr#cancel">nasıl yapılır</a>). Rastgele cihaz kimliği, satın alımlarınızın geri yüklenebilmesi için cihazınızda kalır.</li>
+        <li><strong>Yapay zekâ veri izni:</strong> <strong>Ayarlar &gt; Yapay zekâ veri izni</strong> bölümündeki <strong>Yapay zekâ analizine izin ver</strong> anahtarıyla onayınızı geri alabilirsiniz. Onay kapalıyken analiz yapılamaz. Onayı geri almak, daha önce yapılan işlemlerin hukuka uygunluğunu etkilemez.</li>
+        <li><strong>Tek tek silme:</strong> Kayıtlı rehberlerinizi listeden tek tek silebilirsiniz.</li>
+        <li><strong>Erişim:</strong> Geçmiş ve Kayıtlı rehberler ekranları, sunucuda sizin için tuttuğumuz içeriği gösterir.</li>
     </ul>
+    <h3>Yasal haklarınız</h3>
+    <p>
+        KVKK m. 11 kapsamında; verilerinizin işlenip işlenmediğini öğrenme, bilgi talep etme, amaca uygun kullanılıp
+        kullanılmadığını öğrenme, aktarıldığı üçüncü kişileri bilme, düzeltme, silme veya yok edilmesini isteme, bu
+        işlemlerin aktarılan kişilere bildirilmesini isteme, münhasıran otomatik sistemlerle analiz sonucu aleyhinize
+        bir sonuca itiraz etme ve zararın giderilmesini talep etme haklarına sahipsiniz. AB/AEA'daysanız GDPR kapsamında
+        erişim, düzeltme, silme, kısıtlama, veri taşınabilirliği, itiraz ve rızayı geri alma haklarınız vardır.
+    </p>
+    <p>
+        Taleplerinizi <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a> adresine iletebilirsiniz;
+        en geç 30 gün içinde yanıtlarız. Hesap sistemi olmadığı için kayıtlarınızı yalnızca uygulamadaki rastgele kimlik
+        üzerinden bulabiliriz; bu yüzden silme için en hızlı yol uygulama içindeki <strong>Verilerimi sil</strong> seçeneğidir.
+        Ayrıca Kişisel Verileri Koruma Kurumu'na veya AB'de bulunduğunuz ülkenin veri koruma otoritesine şikâyette bulunabilirsiniz.
+    </p>
 
-    <h3>2.3 Üçüncü Taraf Hizmetleri</h3>
-    <ul>
-        <li><strong>Google AdMob:</strong> Reklam gösterimi için Google AdMob kullanılmaktadır. Google'ın gizlilik politikası için: <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a></li>
-        <li><strong>Apple In-App Purchase:</strong> Uygulama içi satın alımlar Apple'ın ödeme sistemi üzerinden gerçekleştirilir.</li>
-    </ul>
+    <h2 id="security">8. Güvenlik</h2>
+    <p>
+        Uygulama ile sunucu arasındaki tüm trafik HTTPS (TLS) ile şifrelenir. Yapay zekâ ve ödeme anahtarları yalnızca
+        sunucuda tutulur, veritabanına erişim sınırlıdır ve yalnızca hizmet için gereken veriyi işleriz. Hiçbir yöntem
+        yüzde yüz güvenli olmasa da verilerinizi korumak için makul teknik ve idari önlemleri alırız.
+    </p>
 
-    <h2>3. Bilgilerin Kullanımı</h2>
-    <p>Toplanan bilgiler yalnızca aşağıdaki amaçlarla kullanılır:</p>
-    <ul>
-        <li>Tamir analizi ve rehber oluşturma hizmeti sunmak</li>
-        <li>Uygulama deneyimini iyileştirmek</li>
-        <li>Teknik sorunları tespit etmek ve gidermek</li>
-    </ul>
+    <h2 id="children">9. Çocuklar</h2>
+    <p>
+        Fixy 13 yaşın altındaki çocuklara yönelik değildir ve bu yaştaki çocuklardan bilerek veri toplamayız. Bulunduğunuz
+        ülkede dijital rıza yaşı daha yüksekse uygulamayı ebeveyninizin izniyle kullanın. Elektrik, gaz veya yüksekte çalışma
+        gibi işler yetişkin sorumluluğundadır. Bir çocuğun veri gönderdiğini öğrenirsek bu verileri sileriz.
+    </p>
 
-    <h2>4. Bilgilerin Paylaşımı</h2>
-    <p>Kişisel bilgileriniz üçüncü taraflarla paylaşılmaz, satılmaz veya kiralanmaz. Yasal zorunluluklar dışında bilgileriniz gizli tutulur.</p>
+    <h2 id="changes">10. Değişiklikler</h2>
+    <p>
+        Bu politikayı hizmet değiştikçe güncelleriz. Önemli değişiklikleri uygulama içinde veya App Store sürüm notlarında
+        duyururuz. Sayfanın başındaki tarih son güncellemeyi gösterir.
+    </p>
 
-    <h2>5. Veri Güvenliği</h2>
-    <p>Verilerinizi korumak için endüstri standartlarında güvenlik önlemleri uygulanmaktadır. Ancak internet üzerinden hiçbir veri iletiminin %100 güvenli olmadığını hatırlatırız.</p>
+    <h2 id="contact">11. İletişim</h2>
+    <p>
+        Seyit Kaan Güneş · <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a> ·
+        <a href="support.html?lang=tr">Destek sayfası</a>
+    </p>
 
-    <h2>6. Çocukların Gizliliği</h2>
-    <p>Uygulamamız 13 yaş altındaki çocuklara yönelik değildir. Bilerek 13 yaş altı kullanıcılardan kişisel bilgi toplamayız.</p>
-
-    <h2>7. Veri Saklama ve Silme</h2>
-    <p>Cihazınızda saklanan veriler (geçmiş, kaydedilen rehberler) uygulamayı sildiğinizde otomatik olarak kaldırılır. Sunucu tarafında saklanan anonim kullanım verileri 12 ay sonra otomatik olarak silinir.</p>
-
-    <h2>8. Kullanıcı Hakları</h2>
-    <p>Aşağıdaki haklara sahipsiniz:</p>
-    <ul>
-        <li>Verilerinize erişim talep etme</li>
-        <li>Verilerinizin silinmesini talep etme</li>
-        <li>Veri işlemeye itiraz etme</li>
-    </ul>
-
-    <h2>9. Değişiklikler</h2>
-    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir.</p>
-
-    <h2>10. İletişim</h2>
-    <p>Gizlilik politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:</p>
-    <p>E-posta: <strong>seyitkaangunes@icloud.com</strong></p>
-
-    <hr>
-    <p style="color: #999; font-size: 14px;">Tamirci Cebimde &copy; 2026. Tüm hakları saklıdır.</p>
+    <footer>Fixy © 2026</footer>
+</main>
 </body>
 </html>

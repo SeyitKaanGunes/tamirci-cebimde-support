@@ -3,66 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tamirci Cebimde - Destek</title>
+    <title>Fixy Destek</title>
+    <meta name="description" content="Fixy destek: planlar, satın alımları geri yükleme, aboneliği iptal etme, verilerinizi silme ve iletişim.">
+    <link rel="alternate" hreflang="tr" href="support.html">
+    <link rel="alternate" hreflang="en" href="support-en.html">
+    <script>
+        // The app and older store listings link this page for every language.
+        // Send readers whose device is not set to Turkish to the English page;
+        // "?lang=tr" (used by the English page's switch link) keeps Turkish.
+        (function () {
+            try {
+                if (/[?&]lang=tr\b/.test(window.location.search)) return;
+                var langs = navigator.languages && navigator.languages.length
+                    ? navigator.languages
+                    : [navigator.language || ""];
+                var wantsTurkish = langs.some(function (l) {
+                    return String(l).toLowerCase().indexOf("tr") === 0;
+                });
+                if (!wantsTurkish) window.location.replace("support-en.html" + window.location.hash);
+            } catch (e) { /* stay on the Turkish page */ }
+        })();
+    </script>
     <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1f2328;
+            --muted: #59636e;
+            --accent: #1a5fd0;
+            --border: #d8dee4;
+            --soft: #f3f6fb;
+            --danger-bg: #fdecec;
+            --danger-border: #e05a5a;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1216;
+                --text: #e6e9ed;
+                --muted: #9aa4af;
+                --accent: #7fb0ff;
+                --border: #2c333b;
+                --soft: #171c22;
+                --danger-bg: #2d1416;
+                --danger-border: #b04444;
+            }
+        }
+        * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
         }
-        h1 { color: #1a73e8; }
-        h2 { color: #444; margin-top: 30px; }
-        .contact-box {
-            background: #f0f7ff;
-            border: 1px solid #1a73e8;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .faq-item { margin-bottom: 20px; }
-        .faq-item h3 { color: #1a73e8; margin-bottom: 5px; }
+        main { max-width: 820px; margin: 0 auto; padding: 24px 16px 48px; }
+        header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+        h1 { font-size: 1.8rem; margin: 0; }
+        h2 { font-size: 1.25rem; margin: 36px 0 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+        h3 { font-size: 1.05rem; margin: 18px 0 4px; }
+        a { color: var(--accent); }
+        .lang-switch { font-size: 0.95rem; }
+        .contact-box { background: var(--soft); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; margin: 20px 0; }
+        .contact-box h2 { margin: 0 0 6px; padding: 0; border: 0; }
+        .danger { background: var(--danger-bg); border: 1px solid var(--danger-border); border-radius: 10px; padding: 10px 14px; }
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 8px 10px; border: 1px solid var(--border); }
+        th { background: var(--soft); }
+        footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
-    <h1>Tamirci Cebimde - Destek</h1>
+<main>
+    <header>
+        <h1>Fixy Destek</h1>
+        <a class="lang-switch" href="support-en.html" hreflang="en" lang="en">English version</a>
+    </header>
 
-    <div class="contact-box">
-        <h2 style="margin-top: 0;">Bize Ulaşın</h2>
-        <p>Sorularınız, önerileriniz veya sorunlarınız için bize e-posta gönderin:</p>
-        <p><strong>E-posta:</strong> seyitkaangunes@icloud.com</p>
+    <div class="contact-box" id="contact">
+        <h2>Bize ulaşın</h2>
+        <p>
+            Soru, öneri veya sorunlarınız için: <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a><br>
+            Daha hızlı yardım için iPhone modelinizi, iOS sürümünü, uygulama sürümünü (App Store'daki sürüm geçmişinde görünür)
+            ve varsa hata mesajının ekran görüntüsünü ekleyin. Kişisel belge veya fotoğraf göndermeyin.
+        </p>
     </div>
 
-    <h2>Sık Sorulan Sorular</h2>
+    <h2 id="how">Fixy nasıl çalışır?</h2>
+    <ol>
+        <li>Ana ekranda <strong>Çırak</strong> veya <strong>Usta</strong> modunu seçin.</li>
+        <li>Tamir kategorisini seçin, bir fotoğraf ekleyin ve/veya sorunu birkaç cümleyle yazın.</li>
+        <li>Fixy olası nedeni, risk seviyesini, güvenlik uyarılarını, malzemeleri ve adım adım planı çıkarır.</li>
+    </ol>
+    <p>Fixy'de reklam ve kredi sistemi yoktur. Ücretsiz kullanım ve isteğe bağlı Premium abonelik vardır.</p>
 
-    <div class="faq-item">
-        <h3>Uygulama nasıl çalışır?</h3>
-        <p>Tamir edilecek yerin fotoğrafını çekin veya sorunu yazarak tarif edin. AI asistanımız sorunu analiz ederek size adım adım tamir rehberi sunar.</p>
+    <h2 id="plans">Ücretsiz ve Premium</h2>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Ücretsiz</th><th>Premium</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ul>
+                        <li>Çırak modu: hızlı, sade teşhis ve adımlar</li>
+                        <li>Günlük analiz limiti</li>
+                        <li>Bir defalık ücretsiz Usta önizlemesi</li>
+                        <li>Tehlike uyarıları ve güvenlik yönlendirmesi</li>
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        <li>Usta modu: daha derin, teknik teşhis ve rehber</li>
+                        <li>Adım fotoğrafı kontrolü: tamir sırasında yeni fotoğraf gönderip adımı güncelletme</li>
+                        <li>Her gün daha fazla analiz (adil kullanım; dakika başına sınırlar, kötüye kullanıma karşı abonelik başına, aboneliği geri yükleyen cihazlarla ortak bir günlük tavan ve yoğun dönemlerde geçici kısıtlamalar uygulanabilir)</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     </div>
+    <h3>Abonelikler nasıl işler?</h3>
+    <ul>
+        <li>Premium; haftalık, aylık ve yıllık otomatik yenilenen abonelik olarak sunulur. Güncel fiyat, süre ve varsa ücretsiz deneme, satın almadan önce uygulamada yerel para biriminizle gösterilir.</li>
+        <li>Ödeme, satın almayı onayladığınızda Apple Kimliği hesabınızdan alınır.</li>
+        <li>Abonelik, dönem bitmeden en az 24 saat önce iptal edilmezse otomatik olarak yenilenir; yenileme ücreti dönem bitmeden önceki 24 saat içinde alınır.</li>
+        <li>Ücretsiz deneme sunuluyorsa, deneme bitmeden en az 24 saat önce iptal etmezseniz ücretli dönem başlar. Deneme sırasında başka bir plan satın alırsanız denemenin kalan süresi geçersiz olur.</li>
+        <li>Kullanım koşulları: <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple Standart Lisans Sözleşmesi (EULA)</a> · <a href="privacy-policy.html?lang=tr">Gizlilik Politikası</a></li>
+    </ul>
 
-    <div class="faq-item">
-        <h3>Kredi sistemi nedir?</h3>
-        <p>Her analiz belirli miktarda kredi kullanır. Reklam izleyerek ücretsiz kredi kazanabilir veya uygulama içinden kredi paketi satın alabilirsiniz.</p>
-    </div>
+    <h2 id="restore">Satın alımları geri yükleme</h2>
+    <p>
+        Yeni bir iPhone'a geçtiyseniz veya Premium görünmüyorsa: Fixy'de Premium ekranını açın ve <strong>Geri yükle (Restore)</strong>
+        düğmesine dokunun. Satın alma yaptığınız Apple Kimliği ile giriş yapmış olmalısınız. Geri yükleme birkaç saniye sürebilir;
+        ardından uygulamayı kapatıp açmanız yeterlidir.
+    </p>
 
-    <div class="faq-item">
-        <h3>Fotoğraflarım saklanıyor mu?</h3>
-        <p>Hayır. Gönderdiğiniz fotoğraflar yalnızca analiz için kullanılır ve kalıcı olarak saklanmaz.</p>
-    </div>
+    <h2 id="cancel">Aboneliği iptal etme veya değiştirme</h2>
+    <p>Abonelikleri Apple yönetir; uygulamayı silmek aboneliği iptal etmez.</p>
+    <ol>
+        <li>iPhone'da <strong>Ayarlar</strong>'ı açın ve en üstteki adınıza dokunun.</li>
+        <li><strong>Abonelikler</strong> &gt; <strong>Fixy</strong>'yi seçin.</li>
+        <li><strong>Aboneliği İptal Et</strong>'e dokunun veya başka bir plan seçin.</li>
+    </ol>
+    <p>
+        Kısayol: <a href="https://apps.apple.com/account/subscriptions">apps.apple.com/account/subscriptions</a>.
+        İptal ettiğinizde Premium, ödediğiniz dönemin sonuna kadar açık kalır.
+        İade talepleri Apple tarafından değerlendirilir: <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.
+    </p>
 
-    <div class="faq-item">
-        <h3>Tehlikeli tamiratlar için uyarı var mı?</h3>
-        <p>Evet. Elektrik ve gaz gibi riskli kategorilerde güvenlik uyarıları gösterilir. Ciddi durumlarda profesyonel yardım almanız önerilir.</p>
-    </div>
+    <h2 id="delete-data">Verilerimi nasıl silerim?</h2>
+    <p>
+        Fixy hesap oluşturmaz; cihazınızda üretilen rastgele bir kimlikle çalışır. Sunucudaki verilerinizi uygulama içinden silebilirsiniz:
+    </p>
+    <ol>
+        <li>Ana ekrandaki dişli simgesine dokunarak <strong>Ayarlar</strong>'ı açın.</li>
+        <li><strong>Verilerimi sil</strong>'e dokunun ve onaylayın.</li>
+    </ol>
+    <p>
+        Bu işlem sunucudaki geçmişinizi, kayıtlı rehberlerinizi, tercihlerinizi, geri bildirimlerinizi, kullanım sayaçlarınızı,
+        bu cihazın kendi abonelik olaylarını ve abonelik kopyanızı hemen ve kalıcı olarak siler. Veri silmek günlük limiti
+        sıfırlamasın diye yalnızca günlük limit sayaçları en geç 7 gün içinde kendiliğinden silinir: bu cihazın bugünkü sayacı
+        ve mağaza aboneliğinin tek yönlü bir koduyla tutulan aboneliğin günlük sayaçları.
+        Aboneliğiniz aynı Apple Kimliği'ne bağlı cihazlar arasında taşındıysa, diğer cihazın Premium'u koruması için bu iki
+        cihaz kimliği arasındaki bağlantı saklanır ve abonelik sona erdikten 30 gün sonra otomatik olarak silinir.
+        <strong>Aboneliğinizi iptal etmez</strong> (yukarıdaki adımları kullanın).
+        Satın alımlarınızın geri yüklenebilmesi için rastgele cihaz kimliği cihazınızda kalır; aktif bir aboneliğiniz varsa
+        Premium durumunuz bir sonraki eşitlemede geri gelir.
+        Uygulamayı kaldırmak sunucudaki verilerinizi silmez; silmek için yukarıdaki adımları kullanın.
+        Uygulamaya erişiminiz yoksa <a href="mailto:seyitkaangunes@icloud.com">e-posta</a> ile yazın; 30 gün içinde yanıtlarız.
+        Ayrıntılar: <a href="privacy-policy.html?lang=tr#retention">Gizlilik Politikası</a>.
+    </p>
 
-    <div class="faq-item">
-        <h3>Hesabımı nasıl silebilirim?</h3>
-        <p>Uygulama hesap oluşturmaz, anonim cihaz kimliği ile çalışır. Uygulamayı sildiğinizde tüm yerel verileriniz otomatik olarak kaldırılır.</p>
-    </div>
+    <h2 id="privacy">Fotoğraflarım ve açıklamalarım nereye gidiyor?</h2>
+    <p>
+        Analiz için sunucumuz üzerinden yapay zekâ sağlayıcılarına (öncelikle Anthropic'in Claude modellerine) gönderilir.
+        Fotoğraflar sunucularımızda saklanmaz. Açıklamalar ve yanıtlar, Geçmiş ekranında görebilmeniz için siz silene kadar, en fazla 12 ay saklanır.
+        Hiçbir veriyi reklam için kullanmaz veya satmayız. Tam liste: <a href="privacy-policy.html?lang=tr#recipients">Gizlilik Politikası</a>.
+    </p>
 
-    <hr>
-    <p style="color: #999; font-size: 14px;">Tamirci Cebimde &copy; 2026. Tüm hakları saklıdır.</p>
+    <h2 id="safety">Güvenlik</h2>
+    <p class="danger">
+        Fixy bir rehberdir; profesyonel ustanın veya acil servislerin yerini tutmaz. Gaz kokusu, karbonmonoksit alarmı, yanık kokusu, kıvılcım, duman,
+        suyla temas eden elektrik veya yapısal hasar gibi durumlarda Fixy analiz ekranının üstünde kırmızı bir uyarı gösterir:
+        işi bırakın, bölgeden uzaklaşın ve bir uzmana ulaşın. Acil durumda <strong>112</strong>'yi, doğal gaz kaçağında
+        <strong>187</strong>'yi arayın.
+    </p>
+
+    <h2 id="faq">Sık karşılaşılan durumlar</h2>
+    <h3>“Günlük limit doldu” görüyorum</h3>
+    <p>Ücretsiz kullanımda günlük bir analiz sınırı vardır; ertesi gün yenilenir. Ortak bir ağda (mobil veri, iş yeri ya da okul Wi-Fi'ı) o ağdan çok sayıda analiz yapıldığında ücretsiz analizler günün geri kalanında da durabilir; mesaj bu durumda ağı belirtir. Premium'da günde çok daha fazla analiz yapılabilir; adil kullanım geçerlidir: kötüye kullanıma karşı abonelik başına günlük bir tavan (en fazla 100 yazılı ve 40 fotoğraflı analiz; aboneliği geri yükleyen tüm cihazlar bu tavanı paylaşır) ve dakika başına sınırlar vardır. Tavana ulaşıldığında mesaj bunu belirtir ve sınır ertesi gün (UTC) yenilenir.</p>
+    <h3>“Servis şu an yoğun” görüyorum</h3>
+    <p>Fixy'nin yapay zekâsı şu an çok yoğun. Daha sonra tekrar deneyin; çok yoğun dönemlerde ücretsiz analizler ertesi güne (UTC) kadar durabilir. Tehlike uyarıları yine çalışır, verileriniz kaybolmaz.</p>
+    <h3>Analiz başlamıyor</h3>
+    <p>
+        İlk analizden önce veri işleme onayı istenir. Onayı kapattıysanız <strong>Ayarlar &gt; Yapay zekâ veri izni</strong>
+        bölümündeki <strong>Yapay zekâ analizine izin ver</strong> anahtarını açın. İnternet bağlantınızı da kontrol edin.
+    </p>
+    <h3>Premium aldım ama görünmüyor</h3>
+    <p><a href="#restore">Satın alımları geri yükleyin</a>. Sorun sürerse bize yazın.</p>
+
+    <footer>Fixy © 2026 · <a href="privacy-policy.html?lang=tr">Gizlilik Politikası</a></footer>
+</main>
 </body>
 </html>
