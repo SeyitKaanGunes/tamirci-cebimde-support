@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixy Privacy Policy</title>
+    <meta name="description" content="What data the Fixy app processes, who it is shared with, how long it is kept and how to delete it.">
+    <link rel="alternate" hreflang="tr" href="privacy-policy.html">
+    <link rel="alternate" hreflang="en" href="privacy-policy-en.html">
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #1f2328;
+            --muted: #59636e;
+            --accent: #1a5fd0;
+            --border: #d8dee4;
+            --soft: #f3f6fb;
+            --warn-bg: #fff4e5;
+            --warn-border: #f0b45a;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0f1216;
+                --text: #e6e9ed;
+                --muted: #9aa4af;
+                --accent: #7fb0ff;
+                --border: #2c333b;
+                --soft: #171c22;
+                --warn-bg: #2b2112;
+                --warn-border: #a8762e;
+            }
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+        }
+        main { max-width: 860px; margin: 0 auto; padding: 24px 16px 48px; }
+        header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; }
+        h1 { font-size: 1.8rem; margin: 0; }
+        h2 { font-size: 1.25rem; margin: 36px 0 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+        h3 { font-size: 1.05rem; margin: 20px 0 6px; }
+        a { color: var(--accent); }
+        .lang-switch { font-size: 0.95rem; }
+        .meta { color: var(--muted); margin: 4px 0 20px; }
+        .summary { background: var(--soft); border: 1px solid var(--border); border-radius: 12px; padding: 12px 18px; }
+        .summary ul { margin: 8px 0; padding-left: 20px; }
+        .note { background: var(--warn-bg); border: 1px solid var(--warn-border); border-radius: 10px; padding: 10px 14px; }
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 8px 10px; border: 1px solid var(--border); }
+        th { background: var(--soft); }
+        .where { color: var(--muted); font-size: 0.85rem; }
+        footer { margin-top: 40px; color: var(--muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+<main>
+    <header>
+        <h1>Fixy Privacy Policy</h1>
+        <a class="lang-switch" href="privacy-policy.html?lang=tr" hreflang="tr" lang="tr">Türkçe sürüm</a>
+    </header>
+    <p class="meta">Last updated: October 2026 · Applies to the Fixy iOS app (version 1.2.0 and later) and its server.</p>
+
+    <section class="summary" aria-label="At a glance">
+        <strong>At a glance</strong>
+        <ul>
+            <li>Fixy has no accounts. There are no ads, no tracking for advertising and we never sell your data.</li>
+            <li>Your description and photo are sent through our server to AI providers (primarily Anthropic's Claude models) to create your repair guide. Photos are not stored on our servers.</li>
+            <li>Your history (for up to 12 months) and saved guides are stored on our server, linked to a random ID created on your device, until you delete them. Saved guides of a device that has not used the app for 12 months are deleted.</li>
+            <li>You can delete your server data at any time in the app: <strong>Settings &gt; Delete my data</strong>.</li>
+            <li>Apple takes subscription payments and RevenueCat manages subscription status. We never see your card details.</li>
+        </ul>
+    </section>
+
+    <h2 id="controller">1. Who is responsible and how to reach us</h2>
+    <p>
+        Fixy is developed and provided by the independent developer <strong>Seyit Kaan Güneş</strong> (Türkiye), who is the
+        data controller under the Turkish Personal Data Protection Law No. 6698 (KVKK) and the EU General Data Protection
+        Regulation (GDPR). For any privacy question or request:
+        <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a>
+    </p>
+
+    <h2 id="data">2. What data we process</h2>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Data</th><th>What it is used for</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Random device identifier</strong></td>
+                <td>The app creates a random ID on first launch. It does not use your name, email, phone number or Apple advertising identifier (IDFA). The ID links your usage limits, history, saved guides and subscription. It is stored in the iOS Keychain, so it can stay the same if you delete and reinstall the app.</td>
+            </tr>
+            <tr>
+                <td><strong>Problem description and your choices</strong></td>
+                <td>The text you write, the category you choose, the app language and Apprentice/Master mode; used to create the diagnosis and repair guide.</td>
+            </tr>
+            <tr>
+                <td><strong>Photos</strong></td>
+                <td>The problem photo and (Premium) step photos are sent to an AI provider only to analyze them. They are not stored on our servers; history only records that a photo was attached.</td>
+            </tr>
+            <tr>
+                <td><strong>AI responses</strong></td>
+                <td>Diagnosis, safety warnings, materials and steps; shown to you and listed in History.</td>
+            </tr>
+            <tr>
+                <td><strong>Saved guides</strong></td>
+                <td>Guides you save, so you can open them again later.</td>
+            </tr>
+            <tr>
+                <td><strong>Feedback</strong></td>
+                <td>“Helpful / not helpful / completed” marks and an optional comment; used to improve guides.</td>
+            </tr>
+            <tr>
+                <td><strong>Usage and limit counters</strong></td>
+                <td>Requests per minute and per day, guide saves per day, whether the free Master preview was used, and timestamps; used to apply free usage limits and prevent abuse.</td>
+            </tr>
+            <tr>
+                <td><strong>Subscription information</strong></td>
+                <td>Product (weekly/monthly/yearly), start and expiry dates, store, and subscription events from RevenueCat; used to unlock Premium.</td>
+            </tr>
+            <tr>
+                <td><strong>Technical data</strong></td>
+                <td>IP address, app version and error logs; used for security, per-IP rate limiting and debugging. The IP address is not written to our database. To share the free tier fairly, the database keeps a daily usage counter per network under a keyed one-way code derived from the IP address (for IPv6, from its network part); the code changes every day and the address cannot be read from it.</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>
+        <strong>Kept only on your device:</strong> settings such as your language, your data processing consent, the selected mode and whether you have seen the introduction.
+    </p>
+    <p>
+        <strong>We do not collect:</strong> your name, email, phone number, contacts, precise location, advertising identifier (IDFA), health data or card details.
+    </p>
+    <p class="note">
+        Please avoid putting personal details such as IDs, addresses, faces or documents in your descriptions and photos.
+        Fixy does not need them to work.
+    </p>
+
+    <h2 id="purposes">3. Why we process data and on what legal basis</h2>
+    <ul>
+        <li><strong>Creating the analysis and guide you ask for, and providing History and Saved guides:</strong> performance of a contract (KVKK Art. 5/2-c; GDPR Art. 6(1)(b)).</li>
+        <li><strong>Sending your description and photos to AI providers and processing them abroad:</strong> your explicit consent, requested in the app before your first analysis (KVKK Art. 5/1 and Art. 9; GDPR Art. 6(1)(a)). You can withdraw it at any time.</li>
+        <li><strong>Verifying your subscription and unlocking Premium:</strong> performance of a contract.</li>
+        <li><strong>Security, usage limits, preventing abuse and fraud:</strong> legitimate interests (KVKK Art. 5/2-f; GDPR Art. 6(1)(f)).</li>
+        <li><strong>Legal obligations and requests from authorities:</strong> KVKK Art. 5/2-ç; GDPR Art. 6(1)(c).</li>
+    </ul>
+    <p>We do not use your data for advertising, profiling or sale. The app contains no ads and no advertising SDK.</p>
+
+    <h2 id="recipients">4. AI processing and who receives data</h2>
+    <p>We share data only with the following service providers, which act on our behalf to provide the service:</p>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Provider</th><th>Role</th><th>Data received</th></tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Anthropic, PBC</strong><br><span class="where">USA</span></td>
+                <td>Primary AI provider (Claude models). Creates diagnoses, guides and step photo checks.</td>
+                <td>Description, photo, category, language and mode. Your device ID is not sent.</td>
+            </tr>
+            <tr>
+                <td><strong>Cloudflare, Inc.</strong><br><span class="where">Global network, USA-based</span></td>
+                <td>Server hosting (Workers), database (D1), short-lived cache (KV), per-IP rate limiting, and fallback AI provider (Workers AI).</td>
+                <td>All requests the app sends to our server and the IP address; analysis data when used as a fallback.</td>
+            </tr>
+            <tr>
+                <td><strong>Fallback AI providers</strong><br><span class="where">USA; Singapore (Alibaba Cloud)</span></td>
+                <td>Used only when the primary provider is unavailable and the provider is enabled in our configuration: Groq, Inc.; Alibaba Cloud Model Studio (Qwen models, international region); Google (Gemini API, photo analysis only).</td>
+                <td>The same analysis data. Your device ID is not sent.</td>
+            </tr>
+            <tr>
+                <td><strong>RevenueCat, Inc.</strong><br><span class="where">USA</span></td>
+                <td>Subscription management and purchase validation.</td>
+                <td>The random device ID (as app user ID), purchase and subscription transactions, and technical details such as device model, iOS and app version.</td>
+            </tr>
+            <tr>
+                <td><strong>Apple Inc.</strong><br><span class="where">USA / your region</span></td>
+                <td>App Store payments, subscription renewal, cancellation and refunds.</td>
+                <td>Only Apple processes your payment details; Apple's own privacy policy applies.</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>
+        AI providers process data under their commercial API terms and only to answer your request. Anthropic does not use
+        data sent through its API to train models by default. Providers may keep data for a limited time (typically no longer
+        than 30 days) to monitor abuse. Apart from this, we share data with authorities only when the law requires it.
+    </p>
+
+    <h2 id="transfers">5. International transfers</h2>
+    <p>
+        Our servers and providers are located outside Türkiye and the European Economic Area, mainly in the USA and Singapore.
+        These transfers rely on the explicit consent you give before your first analysis (KVKK Art. 9) and on appropriate
+        safeguards such as the standard contractual clauses offered by the providers (GDPR Art. 46). If you withdraw your
+        consent, no new analysis can be made.
+    </p>
+
+    <h2 id="retention">6. How long we keep data</h2>
+    <div class="table-wrap">
+    <table>
+        <thead>
+            <tr><th>Data</th><th>Retention</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>Photos</td><td>Not stored on our servers; discarded once the response is created. The AI provider may keep them for a limited time under its terms (see section 4).</td></tr>
+            <tr><td>History (descriptions and AI responses)</td><td>Until you delete it, at most 12 months: older entries are deleted automatically every day. <strong>Settings &gt; Delete my data</strong> deletes all of it immediately.</td></tr>
+            <tr><td>Saved guides, and profile preferences set in app versions before 1.2</td><td>Until you delete them, as long as you use the app: if the app has not been opened on a device for 12 months, that device's saved guides, profile preferences and device record are deleted automatically (unless it has a subscription or purchase record). Each time you open the app counts as use. <strong>Settings &gt; Delete my data</strong> deletes all of them immediately. Deleting a single saved guide removes it immediately.</td></tr>
+            <tr><td>Feedback on guides</td><td>Until you delete it, at most 12 months: older feedback is deleted automatically every day. <strong>Settings &gt; Delete my data</strong> deletes all of it immediately.</td></tr>
+            <tr><td>Usage and limit counters, free preview record</td><td>As long as needed to apply limits. <strong>Delete my data</strong> deletes them immediately, except the daily limit counters (numbers of requests and of certain guide saves: today's counter of this device, and a subscription's counters, including how many new devices restored it today, which are kept under a one-way code of the store subscription so that all devices that restored it share one fair-use limit), so that deleting data cannot reset a daily limit. These are deleted automatically within 7 days. A device record that holds nothing else (no history, saved guides, feedback or subscription) is deleted automatically, with any profile preferences, 30 days after the device was last used.</td></tr>
+            <tr><td>Subscription copy on our server</td><td>Deleted by <strong>Delete my data</strong>, including the one-way code of the store subscription its daily limits are counted under. If you have an active subscription, the app recreates it from Apple and RevenueCat at the next sync. It is also deleted automatically 30 days after the subscription, free trial and any bonus days have ended. Purchase records at Apple and RevenueCat are kept under their policies and tax/accounting obligations.</td></tr>
+            <tr><td>Subscription event log (RevenueCat notifications)</td><td>Up to 90 days, then deleted automatically. Each entry holds the notification as RevenueCat sent it (event type, product, transaction IDs, price, country, store and the random device IDs it concerns). <strong>Delete my data</strong> deletes this device's own events immediately. An event of another device of the same Apple ID that names this device's ID (for example when the subscription moved between them) is kept until its 90 days end.</td></tr>
+            <tr><td>Subscription transfer link</td><td>Only if your subscription moved between devices of the same Apple ID: a link between the two random device IDs (no other content), so that the other device keeps Premium. <strong>Delete my data</strong> does not remove it, because the other device would otherwise lose a subscription you paid for. It is deleted automatically once neither device has had an active subscription for 30 days.</td></tr>
+            <tr><td>Response cache</td><td>To answer identical requests quickly, AI responses are cached under a hash of the description for up to 24 hours. The cache is not linked to your device ID and expires on its own.</td></tr>
+            <tr><td>Daily usage counter per network</td><td>An estimate of the free tier's AI cost and counts of certain guide saves, History entries, feedback and new device records, under a daily one-way code of the network (not the IP address, not linked to your device ID), and one daily total of the free tier's AI cost for all networks together. Deleted automatically within 2 days.</td></tr>
+            <tr><td>Technical logs</td><td>Not stored permanently; 30 days at most.</td></tr>
+            <tr><td>Settings on your device</td><td>Until you delete the app. The random device ID may remain in the iOS Keychain so that your purchases can be restored.</td></tr>
+        </tbody>
+    </table>
+    </div>
+
+    <h2 id="rights">7. Your choices and rights</h2>
+    <h3 id="delete">In the app</h3>
+    <ul>
+        <li><strong>Delete my data:</strong> open <strong>Settings</strong> with the gear icon on the home screen and choose <strong>Delete my data</strong>. It deletes your history, saved guides, preferences, feedback, usage counters (the daily limit counters expire on their own within 7 days), your own subscription events and the subscription copy from our server. A subscription transfer link between two of your device IDs, if one exists, is kept until 30 days after the subscription ends (see section 6). This cannot be undone. It does not cancel your subscription; cancel it in your Apple ID settings (<a href="support-en.html#cancel">how to</a>). The random device ID stays on your device so that your purchases can be restored.</li>
+        <li><strong>AI data consent:</strong> you can withdraw your consent under <strong>Settings &gt; AI data consent</strong> (switch <strong>Allow AI analysis</strong>). No analysis can be made while it is off. Withdrawing consent does not affect processing that happened before.</li>
+        <li><strong>Delete single items:</strong> you can delete saved guides one by one.</li>
+        <li><strong>Access:</strong> the History and Saved guides screens show the content we keep for you on our server.</li>
+    </ul>
+    <h3>Your legal rights</h3>
+    <p>
+        Under KVKK Art. 11 you have the right to learn whether your data is processed, request information, learn the purpose
+        and whether it is used accordingly, know the third parties it is transferred to, request correction, deletion or
+        destruction, ask that these actions are notified to recipients, object to a result against you produced solely by
+        automated systems, and claim compensation. If you are in the EU/EEA, the GDPR gives you the rights of access,
+        rectification, erasure, restriction, data portability, objection and withdrawal of consent.
+    </p>
+    <p>
+        Send requests to <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a>; we reply within 30 days.
+        Because there are no accounts, we can find your records only through the random ID in the app, so the fastest way to
+        delete them is <strong>Delete my data</strong> in the app. You can also complain to the Turkish Personal Data
+        Protection Authority (KVKK) or to the data protection authority of your EU country.
+    </p>
+
+    <h2 id="security">8. Security</h2>
+    <p>
+        All traffic between the app and our server is encrypted with HTTPS (TLS). AI and payment keys are kept only on the
+        server, database access is restricted and we process only the data the service needs. No method is 100% secure, but
+        we take reasonable technical and organizational measures to protect your data.
+    </p>
+
+    <h2 id="children">9. Children</h2>
+    <p>
+        Fixy is not directed at children under 13 and we do not knowingly collect data from them. If the age of digital
+        consent is higher in your country, use the app with a parent's permission. Work involving electricity, gas or heights
+        is an adult responsibility. If we learn that a child has sent us data, we delete it.
+    </p>
+
+    <h2 id="changes">10. Changes</h2>
+    <p>
+        We update this policy when the service changes. We announce important changes in the app or in the App Store release
+        notes. The date at the top shows the last update.
+    </p>
+
+    <h2 id="contact">11. Contact</h2>
+    <p>
+        Seyit Kaan Güneş · <a href="mailto:seyitkaangunes@icloud.com">seyitkaangunes@icloud.com</a> ·
+        <a href="support-en.html">Support page</a>
+    </p>
+
+    <footer>Fixy © 2026</footer>
+</main>
+</body>
+</html>
